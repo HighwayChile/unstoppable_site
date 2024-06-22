@@ -51,7 +51,7 @@ iframe {
   top: 5px;
 } 
 
-.nav_links {
+#nav_links {
   float: left;
   position: sticky;
   top: 5px;
@@ -61,11 +61,7 @@ iframe {
   display: inline;
 }
 
-.search_form{
-  padding-left: 20%;
-}
-
-.search_field {
+#search_field {
   position: relative;
   display: inline-block;
   right: -2px;
@@ -73,17 +69,11 @@ iframe {
   height: 20px;
 }
 
-.search_btn {
+#search_btn {
   display: inline-block;
   width: 60px;
   height: 26px;
 }
-
-/* .price_display {
-  float: left;
-  position: sticky;
-  top: 5px;
-} */
 
 
 a:link {
