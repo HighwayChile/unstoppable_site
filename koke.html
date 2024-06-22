@@ -121,6 +121,8 @@
     
 
   //  SEARCH FUNCTION "FUNCTION"
+  // This could be done wit a script that points to a "landing page" for search results
+  // Should reference the pages as a string element and find all instances of string
     var searchQuery = document.getElementById("search_field").value.trim().toLowerCase();
     var pages = {
       // Very limited search options
@@ -130,7 +132,9 @@
       "schedule": "./dirs/schedule.html",
       "sched" : "./dirs/schedule.html",
       "twitch": "https://www.twitch.tv/kokesher3",
-      "rumble" : "https://rumble.com/c/Koke"
+      "rumble" : "https://rumble.com/c/Koke",
+      "home" : "./koke.html",
+      "koke" : "./koke.html"
     };
 
   // this checks the "pages" var for the searchquery, if it is present,
