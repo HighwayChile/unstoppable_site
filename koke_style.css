@@ -1,95 +1,113 @@
-/* css styling for assignment 5 (cgi_script) */
+/* css styling for koke_page */
 
 body {
-    background-color: #e2ecf5;
+  background-color: #e2ecf5;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
 }
 
 article {
-    margin-top: 20%;
+  text-align: center;
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+header, section, aside, footer {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  margin: 10px 0;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 iframe {
-    width: 100%;
+  width: 100%;
 }
 
 .main_nav {
-    float: right;
-    position: sticky;
-    top: 5px;
+  padding-right: 20px;
+  float: right;
+  position: sticky;
+  top: 5px;
 } 
 
 .nav_links {
-    float: left;
-    position: sticky;
-    top: 5px;
+  float: left;
+  position: sticky;
+  top: 5px;
 }
 
 .nav_list li {
-    display: inline;
+  display: inline;
 }
 
-.search_bar {
-    float: right;
+.search_form{
+  padding-left: 20%;
 }
 
 .search_field {
-    position: relative;
-    display: inline-block;
-    right: -2px;
-    width: 230px;
-    height: 20px;
+  position: relative;
+  display: inline-block;
+  right: -2px;
+  width: 230px;
+  height: 20px;
 }
 
 .search_btn {
-    display: inline-block;
-    width: 60px;
-    height: 26px;
+  display: inline-block;
+  width: 60px;
+  height: 26px;
 }
 
-.price_display {
-    float: left;
-    position: sticky;
-    top: 5px;
-}
+/* .price_display {
+  float: left;
+  position: sticky;
+  top: 5px;
+} */
 
-#doge_tag {
-    display: inline-block;
-}
-
-#doge_price {
-    display: inline;
-}
 
 a:link {
-    color: blue;
+  color: blue;
 }
 
 a:visited {
-    color: darkblue;
+  color: darkblue;
 }
 
 a:hover {
-    color: darkblue;
+  color: darkblue;
 }
 
 a:active {
-    color: darkblue;
+  color: darkblue;
 }
 
 
 /* @media parameters */
 @media screen and (max-width: 800px) {
-    .price_display {
-        float: left;
-        position: sticky;
-        top: 75px;
-    }
+  .price_display {
+      float: left;
+      position: sticky;
+      top: 75px;
+  }
 }

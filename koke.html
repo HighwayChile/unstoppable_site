@@ -31,14 +31,31 @@
     </ul>
   </div>
 
-  <form id="search_form">
+  <form class="search_form">
     <input id="search_field" type="text" placeholder=" enter a search term...">
     <button id="search_btn" type="submit">search</button>
   </form>
 </nav>
 
   
-<br>
+<br><br><br><br><br>
+
+<div class="container">
+  <h1> Game Stuff and Links and Stuff</h1>
+
+  <main> 
+    <article>
+      <h3>Last Stream</h3>
+      <p>add that link here</p>
+    </article>
+
+    <article>
+      <h3>Live Stream Links</h3>
+      <p>add that link here</p>
+    </article>
+
+  </main>
+</div>
   
 <!-- API shows NASA daily photo here -->
 <div id="notify_display"><h4>NASA Astronomy Picture of the Day</h4></div>
@@ -61,71 +78,77 @@
   <h1>Koke Energy RN!</h1>
   
   <!-- fun song -->
-  <iframe src="https://www.youtube.com/embed/AhSEfKo0tlw" width="640" height="480" 
-        frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/AhSEfKo0tlw" width="640" height="480" 
+      frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen>
+</iframe>
   
-        
-    <script>
-      // DOMCOntentLoaded waits until the other contents of the page are loaded then the function
-      document.addEventListener("DOMContentLoaded", function() {
-          fetchNASAData();
-      });
-  
-      // function to display the API photo and info
-      function fetchNASAData() {
-          // Keys are free for NASA API, if this key does not work, it is possible using 
-          // `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY` (be sure to use the backtick!)
-          const apiKey = "ZrJCfy77fLoXejndMkgTthEacoyeqXFNffPn10dw";
-          const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
-  
-          fetch(apiUrl)
-              .then(response => response.json())
-              .then(data => {
-                  // Display data using a function
-                  displayData(data);
-              })
-              .catch(error => console.log(error));
-      }
-  
-  
-      // Function to actually display NASA API data to screen
-      function displayData(data) {
-          const imageElement = document.getElementById("NASA-image");
-          const titleElement = document.getElementById("NASA-title");
-          const explanationElement = document.getElementById("NASA-explanation");
-  
-          imageElement.src = data.url;
-          titleElement.textContent = data.title;
-          explanationElement.textContent = data.explanation;
-      }
-  
-      document.getElementById("search_form").addEventListener("submit", function(event) {
-        event.preventDefault();
-        
-
-      //  SEARCH FUNCTION "FUNCTION"
-        var searchQuery = document.getElementById("search_field").value.trim().toLowerCase();
-        var pages = {
-          // Very limited search options
-          "sitemap":"./dirs/sitemap.html", 
-          "help": "./dirs/help.html",
-          "map":"./dirs/sitemap.html", 
-          "schedule": "./dirs/schedule.html",
-          "sched" : "./dirs/schedule.html"
-        };
-  
-      // this checks the "pages" var for the searchquery, if it is present,
-      // go to that page
-        if (pages.hasOwnProperty(searchQuery)) {
-          window.location.href = pages[searchQuery];
-        }
-        else {
-          alert("Page Not Found!");
-        }
-      });
 
 
-  </script>
+
+      
+<script>
+  // DOMCOntentLoaded waits until the other contents of the page are loaded then the function
+  document.addEventListener("DOMContentLoaded", function() {
+      fetchNASAData();
+  });
+
+  // function to display the API photo and info
+  function fetchNASAData() {
+      // Keys are free for NASA API, if this key does not work, it is possible using 
+      // `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY` (be sure to use the backtick!)
+      const apiKey = "ZrJCfy77fLoXejndMkgTthEacoyeqXFNffPn10dw";
+      const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+
+      fetch(apiUrl)
+          .then(response => response.json())
+          .then(data => {
+              // Display data using a function
+              displayData(data);
+          })
+          .catch(error => console.log(error));
+  }
+
+
+  // Function to actually display NASA API data to screen
+  function displayData(data) {
+      const imageElement = document.getElementById("NASA-image");
+      const titleElement = document.getElementById("NASA-title");
+      const explanationElement = document.getElementById("NASA-explanation");
+
+      imageElement.src = data.url;
+      titleElement.textContent = data.title;
+      explanationElement.textContent = data.explanation;
+  }
+
+  document.getElementById("search_form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+
+  //  SEARCH FUNCTION "FUNCTION"
+    var searchQuery = document.getElementById("search_field").value.trim().toLowerCase();
+    var pages = {
+      // Very limited search options
+      "sitemap":"./dirs/sitemap.html", 
+      "help": "./dirs/help.html",
+      "map":"./dirs/sitemap.html", 
+      "schedule": "./dirs/schedule.html",
+      "sched" : "./dirs/schedule.html",
+      "twitch": "https://www.twitch.tv/kokesher3",
+      "rumble" : "https://rumble.com/c/Koke"
+    };
+
+  // this checks the "pages" var for the searchquery, if it is present,
+  // go to that page
+    if (pages.hasOwnProperty(searchQuery)) {
+      window.location.href = pages[searchQuery];
+    }
+    else {
+      alert("Page Not Found!");
+    }
+  });
+
+
+</script>
 
 
 </body>
