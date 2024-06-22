@@ -15,9 +15,6 @@
 </head>
 
 
-
-
-
 <h1>Unstoppable Koke!</h1>
 <!-- nav stuff (links and search) -->
 <nav class="main_nav">
@@ -26,7 +23,7 @@
       <li><a href="./dirs/sitemap.html">sitemap</a></li>
       <li><a href="./dirs/schedule.html">schedule</a></li>
       <li><a href="https://www.twitch.tv/kokesher3">twitch</a></li>
-      <li><a href="./dirs/schedule.html">rumble</a></li>
+      <li><a href="https://rumble.com/c/Koke">rumble</a></li>
       <!-- <li><a href="./dirs/schedule.html">youtube</a></li> -->
       <li><a href="./dirs/help.html">help</a></li>
       <li><a href="https://www.youtube.com/watch?v=FWzrcb8qZg8">link</a></li>
@@ -40,11 +37,6 @@
   </form>
 </nav>
 
-<!-- API shows Doge price here -->
-<!-- <div class="price_display">
-  <div id="doge_tag"><h3>Doge Price: </h3></div>
-  <div id="doge_price">Finding latest price...</div>
-</div> -->
   
 <br>
   
@@ -86,7 +78,6 @@
           const apiKey = "ZrJCfy77fLoXejndMkgTthEacoyeqXFNffPn10dw";
           const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
   
-          // This is the same form I used to get the Doge price
           fetch(apiUrl)
               .then(response => response.json())
               .then(data => {
@@ -111,17 +102,16 @@
       document.getElementById("search_form").addEventListener("submit", function(event) {
         event.preventDefault();
         
-        // lol I had a long time put into this part because of a Shakespearean typo "toLoerCase" is what I typed, omg
-        // so much time went into this one silly mistake. But now it works!
-      //   takes the input, trims whitespace and makes it all lowercase for parsing
+
+      //  SEARCH FUNCTION "FUNCTION"
         var searchQuery = document.getElementById("search_field").value.trim().toLowerCase();
         var pages = {
           // Very limited search options
-          "sitemap":"../dir/sitemap.html", 
-          "dogegraph": "../dir/dogegraph.html",
-          "map":"../dir/sitemap.html", 
-          "graph": "../dir/dogegraph.html",
-          "help" : "../dir/help.html"
+          "sitemap":"./dirs/sitemap.html", 
+          "help": "./dirs/help.html",
+          "map":"./dirs/sitemap.html", 
+          "schedule": "./dirs/schedule.html",
+          "sched" : "./dirs/schedule.html"
         };
   
       // this checks the "pages" var for the searchquery, if it is present,
@@ -133,28 +123,6 @@
           alert("Page Not Found!");
         }
       });
-  
-      // Function to fetch and update the DOGE price
-      function fetchDogePrice() {
-        const apiUrl = `https://api.coingecko.com/api/v3/simple/price?ids=dogecoin&vs_currencies=usd`;
-  
-        // Fetch DOGE price from CoinGecko API I think it updates every 10 mins
-        fetch(apiUrl)
-          .then(response => response.json())
-          .then(data => {
-            const dogePrice = data.dogecoin.usd;
-            console.log('updoot the prooce, ', dogePrice);
-            document.getElementById('doge_price').innerText = `$${dogePrice} USD`;
-          })
-          .catch(error => {
-            console.error('Error fetching DOGE price:', error);
-            document.getElementById('doge_price').innerText = 'Only 5 price fetches per minute';
-          });
-      }
-  
-      fetchDogePrice();
-      setInterval(fetchDogePrice, 30000);
-
 
 
   </script>
