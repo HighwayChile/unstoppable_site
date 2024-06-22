@@ -8,6 +8,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+    <nav class="main_nav">
+        <div id="nav_links">
+          <ul class="nav_list">
+            <li><a href="./dirs/sitemap.html">sitemap</a></li>
+            <li><a href="./dirs/schedule.html">schedule</a></li>
+            <li><a href="https://www.twitch.tv/kokesher3">twitch</a></li>
+            <li><a href="https://rumble.com/c/Koke">rumble</a></li>
+            <li><a href="./dirs/help.html">help</a></li>
+            <li><a href="https://www.youtube.com/watch?v=FWzrcb8qZg8">link</a></li>
+            <li><a href="https://www.youtube.com/watch?v=hxX9RaTWDnc">link</a></li>
+          </ul>
+        </div>
+      
+        <form id="search_form">
+          <input id="search_field" type="text" placeholder=" enter a search term...">
+          <button id="search_btn" type="submit">search</button>
+        </form>
+      </nav>
+    
+    
+      <script>
+        document.getElementById("search_form").addEventListener("submit", function(event) {
+          event.preventDefault();
+          
+        //  SEARCH FUNCTION "FUNCTION"
+        // This could be done wit a script that points to a "landing page" for search results
+        // Should reference the pages as a string element and find all instances of string
+          var searchQuery = document.getElementById("search_field").value.trim().toLowerCase();
+          var pages = {
+            // Very limited search options
+          // Very limited search options
+          "sitemap":"./sitemap.html",    
+          "help": "./help.html",
+          "map":"./sitemap.html", 
+          "schedule": "./schedule.html",
+          "sched" : "./schedule.html",
+          "twitch": "https://www.twitch.tv/kokesher3",
+          "rumble" : "https://rumble.com/c/Koke",
+          "home" : "../koke.html",
+          "koke" : "../koke.html",
+          "music" : "https://www.youtube.com/watch?v=GubZD0IfWvI"
+          };
+      
+        // this checks the "pages" var for the searchquery, if it is present,
+        // go to that page
+          if (pages.hasOwnProperty(searchQuery)) {
+            window.location.href = pages[searchQuery];
+          }
+          else {
+            alert("Page Not Found!");
+          }
+        });
+      </script>
+
+
+
+
+
     <h1>Schedule</h1>
     <iframe
         src="https://www.twitch.tv/<channel>/schedule"
