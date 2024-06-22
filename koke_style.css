@@ -5,6 +5,7 @@ body {
 }
 
 .container {
+  background: #333;
   width: 80%;
   margin: auto;
   overflow: hidden;
@@ -27,7 +28,7 @@ main {
 
 header, section, aside, footer {
   background: #333;
-  color: #fff;
+  /* color: #fff; */
   padding: 20px;
   margin: 10px 0;
 }
