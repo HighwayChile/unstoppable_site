@@ -70,6 +70,10 @@ iframe {
   display: inline;
 }
 
+.foot_list{
+  list-style-type: none;
+}
+
 #search_field {
   position: relative;
   display: inline-block;
